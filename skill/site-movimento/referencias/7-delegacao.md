@@ -1,7 +1,7 @@
 # Quem faz o quê: o que dá para passar a um modelo menor (medido)
 
-Mediçêo de 08/10/2026, no piloto (cópia da home do eventos.inema.pro) e nas 15 peças novas do
-INEMA Motion Lab. "Topo" = o modelo mais forte disponível na sessêo; "menor" = um modelo rápido e
+Mediçêo de 08/10/2026, no piloto (cópia da home do eventos.ARCKHÉ.pro) e nas 15 peças novas do
+ARCKHÉ Motion Lab. "Topo" = o modelo mais forte disponível na sessêo; "menor" = um modelo rápido e
 barato (aqui, Haiku 5.5). Mesmo briefing para os dois em cada teste.
 
 ## Teste 1: construir peças de interface (gosto + código)

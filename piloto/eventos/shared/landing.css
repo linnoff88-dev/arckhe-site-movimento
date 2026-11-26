@@ -1,4 +1,4 @@
-/* Landing do INEMA Eventos: painel de partidas, News, áreas, imersões, ecossistema e INEMA.PRO. */
+/* Landing do ARCKHÉ Eventos: painel de partidas, News, áreas, imersões, ecossistema e ARCKHÉ.PRO. */
 :root{
   --bg:#0a0b0d;--painel:#101114;--linha:#1d2025;--borda:#262a31;
   --ink:#ece8df;--mut:#9aa2ac;--amber:#f5c04a;--amber-ink:#1a1200;
@@ -133,7 +133,7 @@ p{margin:0}
 .porta-aqui .porta-nome b{color:var(--amber)}
 .porta-papel{color:var(--mut);font-size:16px;line-height:1.45}
 
-/* INEMA.PRO */
+/* ARCKHÉ.PRO */
 .pro{margin-top:88px;background:var(--amber);color:var(--amber-ink)}
 .pro-grade{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
 .pro-selo{font:700 15px/1 var(--mono);letter-spacing:.08em;margin-bottom:16px}

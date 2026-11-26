@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Site em Movimento — o topo vira um filme na rolagem</title>
 <meta name="description" content="Skill para Claude Code e Codex: o topo do site vira um vídeo de IA encadeado que anda com a rolagem, com gráficos animados em código e a chave Parado, Ligado e Raio-X. Kling, Agnes, Kie ou qualquer gerador.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/site-movimento/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/site-movimento/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/site-movimento/guia/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/arckhe-/guia/">
+<link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/arckhe-/guia/en/">
+<link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/arckhe-/guia/es/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .ARCKHÉ{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .ARCKHÉ:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -106,9 +106,9 @@
   <a class="brand" href="#top"><span class="emoji">🎬</span> Site em Movimento</a>
   <span class="sep">|</span>
   <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <a class="ARCKHÉ" href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>
     <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+    <a class="pro" href="https://ARCKHÉ.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
@@ -118,7 +118,7 @@
     <a class="sec" href="#roadmap">Roadmap</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/site-movimento" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/linnoff88-dev/site-movimento" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -196,7 +196,7 @@
   <div class="step"><div class="b">1</div><div>
     <h3>Instale a skill</h3>
     <p>Clone o repositório e ligue a pasta da skill no Claude Code (e no Codex, se usar).</p>
-<pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/site-movimento</span> ~/projetos/site-movimento
+<pre><span class="k">git clone</span> <span class="s">https://github.com/linnoff88-dev/site-movimento</span> ~/projetos/site-movimento
 <span class="k">ln -s</span> ~/projetos/site-movimento/skill/site-movimento ~/.claude/skills/site-movimento
 <span class="k">bash</span> ~/.claude/skills/site-movimento/tests/motores-contrato.sh   <span class="c"># 4/4 motores OK</span></pre>
   </div></div>
@@ -252,8 +252,8 @@ Leia as referências, me entreviste e use o motor kling.</span></pre>
 
 <section id="exemplos"><div class="wrap">
   <span class="chip">Piloto</span>
-  <h2>A home do INEMA eventos com filme na abertura</h2>
-  <p class="sub">Uma cópia de teste da home do eventos.inema.pro. A câmera sai da pista ao anoitecer, entra no terminal e para no painel de partidas, e o painel real da página sobe por cima do filmado. <a href="../piloto/eventos/" target="_blank" rel="noopener">Abrir o piloto</a>.</p>
+  <h2>A home do ARCKHÉ eventos com filme na abertura</h2>
+  <p class="sub">Uma cópia de teste da home do eventos.ARCKHÉ.pro. A câmera sai da pista ao anoitecer, entra no terminal e para no painel de partidas, e o painel real da página sobe por cima do filmado. <a href="../piloto/eventos/" target="_blank" rel="noopener">Abrir o piloto</a>.</p>
   <div class="ex">
     <figure><img src="assets/ex-topo.jpg" alt="Abertura do piloto: o terminal ao anoitecer com a frase Toda turma começa com uma partida" loading="lazy"><figcaption>Abertura: o filme começa na pista.</figcaption></figure>
     <figure><img src="assets/ex-passagem.jpg" alt="O painel real da página subindo por cima do painel filmado" loading="lazy"><figcaption>Passagem: o painel real sobe sobre o filmado.</figcaption></figure>
@@ -270,7 +270,7 @@ Leia as referências, me entreviste e use o motor kling.</span></pre>
 <section id="delegacao"><div class="wrap">
   <span class="chip">Quem faz o quê</span>
   <h2>O que dá para passar a um modelo menor (medido)</h2>
-  <p class="sub">Mesmo briefing para um modelo rápido e barato e para o modelo mais forte. Detalhes em <a href="https://github.com/inematds/site-movimento/blob/main/skill/site-movimento/referencias/7-delegacao.md" target="_blank" rel="noopener">7-delegacao.md</a>.</p>
+  <p class="sub">Mesmo briefing para um modelo rápido e barato e para o modelo mais forte. Detalhes em <a href="https://github.com/linnoff88-dev/site-movimento/blob/main/skill/site-movimento/referencias/7-delegacao.md" target="_blank" rel="noopener">7-delegacao.md</a>.</p>
   <div class="grid g3">
     <div class="card"><h3>Construir com gosto: topo</h3><p>15 peças de interface julgadas às cegas: o modelo menor teve <strong>2 de 5</strong> aprovadas, o topo <strong>8 de 10</strong>. O menor passou em todos os testes automáticos e errou a identidade visual.</p></div>
     <div class="card"><h3>Julgar: modelo menor</h3><p>Os três críticos rodados nos dois modelos deram os <strong>mesmos vereditos e a mesma maior diferença</strong>, em menos de um minuto cada.</p></div>
@@ -280,10 +280,10 @@ Leia as referências, me entreviste e use o motor kling.</span></pre>
 
 <section id="pecas"><div class="wrap">
   <span class="chip">Camada de movimento</span>
-  <h2>20 peças prontas no INEMA Motion Lab</h2>
+  <h2>20 peças prontas no ARCKHÉ Motion Lab</h2>
   <p class="sub">Antes de inventar uma animaçêo, a skill procura no catálogo: busca ⌘K, grade bento, 404 jogável, dia e noite, rodapés com física, cortina, flor, mapa e quebra-blocos, menu que se transforma, menu em tela cheia, navegaçêo que pula, adesivo holográfico, mascote que segue o cursor, dock líquido, botões de geleia, letreiro de placas, rastro de imagens, galeria giratória e carregamento que revela a página. Todas com Raio-X.</p>
-  <div class="cta"><a class="btn ghost" href="https://inematds.github.io/inema-motion-lab/guia/" target="_blank" rel="noopener">Abrir o INEMA Motion Lab</a></div>
-  <p class="sub" style="margin:18px 0 0">Veja também: <a href="https://inematds.github.io/shaders/guia/" target="_blank" rel="noopener">Shaders</a>, mais de 200 efeitos WebGPU grátis (gradientes vivos, vidro, luz, cursor) como componentes, para o fundo das seções.</p>
+  <div class="cta"><a class="btn ghost" href="https://linnoff88-dev.github.io/arckhe-/guia/" target="_blank" rel="noopener">Abrir o ARCKHÉ Motion Lab</a></div>
+  <p class="sub" style="margin:18px 0 0">Veja também: <a href="https://linnoff88-dev.github.io/arckhe-/guia/" target="_blank" rel="noopener">Shaders</a>, mais de 200 efeitos WebGPU grátis (gradientes vivos, vidro, luz, cursor) como componentes, para o fundo das seções.</p>
 </div></section>
 
 <section id="roadmap"><div class="wrap">
@@ -301,8 +301,8 @@ Leia as referências, me entreviste e use o motor kling.</span></pre>
   <div class="wrap">
     <div class="pill">Claude Code</div><div class="pill">Kling · Agnes · Kie · custom</div><div class="pill">ffmpeg · Playwright</div>
     <p style="margin-top:18px">Site em Movimento · aberto e gratuito ·
-      <a href="https://github.com/inematds/site-movimento">inematds/site-movimento</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+      <a href="https://github.com/linnoff88-dev/site-movimento">linnoff88-dev/site-movimento</a> ·
+      <a href="https://ARCKHÉ AI">ARCKHÉ AI</a></p>
   </div>
 </footer>
 

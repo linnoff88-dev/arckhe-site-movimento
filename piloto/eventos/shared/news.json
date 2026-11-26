@@ -1,5 +1,5 @@
 {
- "source": "https://news.inema.pro/",
+ "source": "https://news.ARCKHÉ.pro/",
  "items": [
   {
    "date": "2026-10-08",
@@ -19,7 +19,7 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/yt-pubx/guia/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/guia/",
    "pt": {
     "titulo": "yt-pubx — Publique vídeos no YouTube com um comando",
     "resumo": "Publica vídeos em vários canais do YouTube, criando título, descriçêo, tags e miniatura, com opçêo de agendar."
@@ -35,7 +35,7 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/yt-pub-livesx/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/",
    "pt": {
     "titulo": "yt-pub-livesx — Crie miniaturas e complete os dados das lives",
     "resumo": "Gera miniaturas para lives no Codex e completa títulos e descrições com as informações que faltam."
@@ -51,7 +51,7 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/skills-craft-v6/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/",
    "pt": {
     "titulo": "Skills v6 — Ensine uma vez, o Claude repete do seu jeito",
     "resumo": "Curso de 8 aulas de 15 minutos para criar sua skill no app do Claude, sem programar."
@@ -67,7 +67,7 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/refazvideo/guia/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/guia/",
    "pt": {
     "titulo": "refazvideo — Crie explicativos com um vídeo de referência e seu avatar",
     "resumo": "Transforma um tema e um vídeo de referência em um explicativo em português com seu avatar, para entregar no Telegram ou YouTube."
@@ -83,23 +83,23 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/inema-motion-lab/guia/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/guia/",
    "pt": {
-    "titulo": "INEMA Motion Lab — Anime sites com um prompt",
+    "titulo": "ARCKHÉ Motion Lab — Anime sites com um prompt",
     "resumo": "Oferece um modelo de prompt, cinco animações prontas para sites e vídeos que mostram cada uma."
    },
    "en": {
-    "titulo": "INEMA Motion Lab — Animate websites with a prompt",
+    "titulo": "ARCKHÉ Motion Lab — Animate websites with a prompt",
     "resumo": "Offers a prompt template, five ready-made website animations, and videos showing each one."
    },
    "es": {
-    "titulo": "INEMA Motion Lab — Anima sitios web con un prompt",
+    "titulo": "ARCKHÉ Motion Lab — Anima sitios web con un prompt",
     "resumo": "Ofrece un modelo de prompt, cinco animaciones listas para sitios web y vídeos que muestran cada una."
    }
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/docflow/guia/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/guia/",
    "pt": {
     "titulo": "docflow — Transforme um tema em documentário narrado para o YouTube",
     "resumo": "Cria e publica documentários narrados no YouTube a partir de um tema, com roteiro, imagens, narraçêo e montagem automáticos."
@@ -115,7 +115,7 @@
   },
   {
    "date": "2026-10-07",
-   "url": "https://inematds.github.io/decisions-jev/guia/",
+   "url": "https://linnoff88-dev.github.io/arckhe-/guia/",
    "pt": {
     "titulo": "Decisions × Jev — Compare as ferramentas e converta perguntas",
     "resumo": "Compara a Decisions API com o Jev em imagem, recusa, preço e latência, e converte perguntas entre os formatos com uma ponte em Python."

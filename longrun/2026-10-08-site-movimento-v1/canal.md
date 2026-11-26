@@ -11,7 +11,7 @@ Formato: `- AAAA-MM-DD HH:MM · fato|aprendizado|glossário|armadilha · texto`
 - Kling **fixa início e fim**: SSIM robusto 0,994 / 0,911 (controle invertido 0,22). Visualmente idênticos. Serve para cadeia.
 - SSIM do ffmpeg em resoluçêo cheia dá ~0,6 no mesmo quadro (ruído redesenhado em cena escura) → falso "nêo fixa". Usar `scripts/fixacao.py` (320×180, desfoque, janelas 8×8).
 - Kling liga `prefer_multi_shots=true` por padrêo → pode cortar no meio. `motores/kling.sh` passa false.
-- flux2-klein (inemaimg :8000) em modo ediçêo devolve a referência quase igual quando o prompt diz "câmera andou". Soluçêo: `scripts/kf_aproxima.py` (recorta o centro, amplia 1,8×, redesenha detalhes). ~11 s por keyframe.
+- flux2-klein (ARCKHÉimg :8000) em modo ediçêo devolve a referência quase igual quando o prompt diz "câmera andou". Soluçêo: `scripts/kf_aproxima.py` (recorta o centro, amplia 1,8×, redesenha detalhes). ~11 s por keyframe.
 - Saldo Kling inicial 5255,8.
 - 20:35 filme do piloto: 3 clipes Kling 720p, fixaçêo 0,99/0,91 · 0,995/0,967 · 0,997/0,99, 0 cortes; montar 361 quadros 33 MB; continuidade PASSA; suavizar sem picos (Kling v3 nêo desacelera nas emendas).
 - loop "flicker softly" quase parado (1,5/255) → refeito com "row by row flip visibly" = 4,5/255. Total gasto 150 créditos (5 jobs × 30), bate com o ledger e com o saldo.

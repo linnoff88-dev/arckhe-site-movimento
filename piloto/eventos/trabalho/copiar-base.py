@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Copia a home do eventos.inema.pro (repo inemaeventos, só leitura) para o piloto e reescreve os
+"""Copia a home do eventos.ARCKHÉ.pro (repo ARCKHÉeventos, só leitura) para o piloto e reescreve os
 caminhos: assets locais viram relativos (o piloto vive em /site-movimento/piloto/eventos/ no Pages);
 links para outras páginas do eventos viram absolutos para o site no ar."""
 import os, re, shutil
 
-ORIG = os.path.expanduser('~/projetos/inemaeventos')
+ORIG = os.path.expanduser('~/projetos/ARCKHÉeventos')
 DEST = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 html = open(os.path.join(ORIG, 'index.html'), encoding='utf-8').read()
 
@@ -25,7 +25,7 @@ def troca(m):
     attr, caminho = m.group(1), m.group(2)
     if caminho in assets:
         return f'{attr}="{caminho}"'
-    return f'{attr}="https://eventos.inema.pro/{caminho}"'
+    return f'{attr}="https://eventos.ARCKHÉ.pro/{caminho}"'
 
 
 html = re.sub(r'(src|href)="/([^"]*)"', troca, html)
@@ -34,6 +34,6 @@ html = re.sub(r'(src|href)="/([^"]*)"', troca, html)
 ini = html.index('<body')
 corpo = re.sub(r'>([^<]*)<', lambda m: '>' + m.group(1).replace(' — ', ': ').replace(' – ', ': ') + '<', html[ini:])
 html = html[:ini] + corpo
-html = html.replace('<link href="https://eventos.inema.pro/" rel="canonical"/>', '<meta name="robots" content="noindex"/>')
+html = html.replace('<link href="https://eventos.ARCKHÉ.pro/" rel="canonical"/>', '<meta name="robots" content="noindex"/>')
 open(os.path.join(DEST, 'index.html'), 'w', encoding='utf-8').write(html)
 print(f'{len(assets)} arquivos copiados; index.html reescrito em {DEST}')

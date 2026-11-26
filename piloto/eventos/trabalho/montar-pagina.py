@@ -37,7 +37,7 @@ filme = f'''<main>
 <canvas aria-hidden="true" data-xray="filme de abertura · 3 clipes encadeados de 5 s, anda com a rolagem" data-xray-cost="90" data-xray-prompt="{PROMPT_FILME}" data-xray-tool="kling" id="tela"></canvas>
 <div class="veu"></div>
 <div class="fim"></div>
-<div class="batida alto" data-in="-0.1" data-out="0.24" data-peak="0"><p class="selo">INEMA eventos</p><h2>Toda turma começa com uma partida.</h2></div>
+<div class="batida alto" data-in="-0.1" data-out="0.24" data-peak="0"><p class="selo">ARCKHÉ eventos</p><h2>Toda turma começa com uma partida.</h2></div>
 <div class="batida baixo" data-in="0.3" data-out="0.62" data-peak="0.44"><h2>Áreas, imersões e projetos.</h2><p>IA na prática, com turma marcada ou no seu ritmo.</p></div>
 <div class="batida alto" data-in="0.6" data-out="0.86" data-peak="0.72"><h2>Tudo o que está aberto, num painel.</h2></div>
 <div aria-hidden="true" class="capitulo"><span class="rotulo" data-capitulos="Pista|Terminal|Painel">Pista</span><span class="trilho"><i></i></span></div>
@@ -49,7 +49,7 @@ h = h.replace('<main>', filme, 1)
 video = ('<figure class="news-painel"><video aria-hidden="true" autoplay data-xray="painel que atualiza · loop de 5 s, começa e termina no mesmo quadro" '
          'data-xray-cost="30" data-xray-tool="kling" loop muted playsinline poster="assets/painel.jpg" preload="metadata">'
          '<source src="assets/painel.webm" type="video/webm"/><source src="assets/painel.mp4" type="video/mp4"/></video></figure>')
-marca = '<a class="botao-news" href="https://news.inema.pro/">Ler o INEMA News</a>'
+marca = '<a class="botao-news" href="https://news.ARCKHÉ.pro/">Ler o ARCKHÉ News</a>'
 assert marca in h
 h = h.replace(marca, marca + video, 1)
 

@@ -49,7 +49,7 @@ Uma frase repetida no fim de todo prompt de imagem do mesmo site: luz, lente, pa
 É o que mantém keyframes, imagens de seçêo e loops no mesmo mundo.
 
 ```
-cinematic photograph, blue hour, warm amber light against deep charcoal and navy, 35mm lens,
+cARCKHÉtic photograph, blue hour, warm amber light against deep charcoal and navy, 35mm lens,
 eye-level frontal camera, centered one-point perspective, no text, no letters, no logos, no people
 ```
 

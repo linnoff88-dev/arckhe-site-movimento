@@ -215,7 +215,7 @@ mkdir -p site/vendor && cp $S/runtime/*.js site/vendor/
   quadros JPEG + janela deslizante de ImageBitmap + cabeça de leitura suavizada). Nunca role um `<video>`.
 - **Loops:** `<video muted playsinline loop autoplay>`, primeiro quadro = último.
 - **Um gráfico animado por seçêo, em código** (canvas, SVG, CSS), que explica a seçêo. Seçêo que é só
-  texto e imagem parada reprova. Antes de inventar, procure no catálogo do **INEMA Motion Lab**
+  texto e imagem parada reprova. Antes de inventar, procure no catálogo do **ARCKHÉ Motion Lab**
   (`referencias/4-camada-movimento.md`): 20 peças prontas (busca ⌘K, bento, rodapés com física,
   menu que se transforma, galeria giratória...), todas com `data-xray`.
 - **A chave Parado / Ligado / Raio-X** vai em todo site: `vendor/chave-movimento.js`, e todo elemento

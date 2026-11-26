@@ -2,7 +2,7 @@
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
-[![Site em Movimento](guia/assets/banner-en.jpg)](https://inematds.github.io/site-movimento/guia/en/)
+[![Site em Movimento](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/arckhe-/guia/en/)
 
 ## What it is
 
@@ -12,14 +12,14 @@ Site em Movimento is a skill for Claude Code (and Codex) that builds a site whos
 
 ## 📖 User guide
 
-Full guide (landing + step by step): **https://inematds.github.io/site-movimento/guia/en/**
+Full guide (landing + step by step): **https://linnoff88-dev.github.io/arckhe-/guia/en/**
 
-Live pilot (test copy of the eventos.inema.pro home with a film at the opening): **https://inematds.github.io/site-movimento/piloto/eventos/**
+Live pilot (test copy of the eventos.ARCKHÉ.pro home with a film at the opening): **https://linnoff88-dev.github.io/arckhe-/piloto/eventos/**
 
 ## Install
 
 ```bash
-git clone https://github.com/inematds/site-movimento ~/projetos/site-movimento
+git clone https://github.com/linnoff88-dev/site-movimento ~/projetos/site-movimento
 ln -s ~/projetos/site-movimento/skill/site-movimento ~/.claude/skills/site-movimento
 bash ~/.claude/skills/site-movimento/tests/motores-contrato.sh     # 4/4 engines OK
 ```
@@ -63,8 +63,8 @@ smaller model). The three critics gave the same verdicts on both models. Details
 
 ## See also
 
-- [Shaders](https://inematds.github.io/shaders/guia/en/) — 200+ free WebGPU effects (MIT) as components for your site's section backgrounds.
+- [Shaders](https://linnoff88-dev.github.io/arckhe-/guia/en/) — 200+ free WebGPU effects (MIT) as components for your site's section backgrounds.
 
 ---
 
-Open and free · [INEMA.CLUB](https://inema.club)
+Open and free · [ARCKHÉ AI](https://ARCKHÉ AI)

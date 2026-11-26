@@ -21,11 +21,11 @@ Tipos:
 Regras: poucas coisas se mexendo ao mesmo tempo, cada uma com sentido (se duas se mexem, uma lidera);
 um único `requestAnimationFrame` (registre no `MotionEngine.Loop`); só `transform`/`opacity`.
 
-## 2. Catálogo pronto: INEMA Motion Lab
+## 2. Catálogo pronto: ARCKHÉ Motion Lab
 
 Antes de inventar, procure aqui. Cada peça é um `index.html` autocontido com `PROMPT.md` (o prompt
 que a refaz), modo `?demo=1`, movimento reduzido e `data-xray` em tudo que se mexe.
-Repositório: `~/projetos/inema-motion-lab/pecas/` · página: https://inematds.github.io/inema-motion-lab/guia/
+Repositório: `~/projetos/ARCKHÉ-motion-lab/pecas/` · página: https://linnoff88-dev.github.io/arckhe-/guia/
 
 | Peça | Serve para |
 |---|---|
@@ -33,7 +33,7 @@ Repositório: `~/projetos/inema-motion-lab/pecas/` · página: https://inematds.
 | `bento-glide` | grade bento com moldura que desliza até o bloco ativo |
 | `404-corre` | página 404 jogável |
 | `dia-noite` | alternador de tema que é uma cena |
-| `rodape-inema` | rodapé com letras que caem com física |
+| `rodape-ARCKHÉ` | rodapé com letras que caem com física |
 | `menu-morfo` | menu que se transforma ao abrir |
 | `adesivo-holo` | adesivo holográfico que reage ao cursor |
 | `rodape-cortina` | rodapé que se revela como cortina |

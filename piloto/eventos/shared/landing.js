@@ -1,5 +1,5 @@
-// Landing do INEMA Eventos. Nenhum texto visível mora aqui: tudo vem do HTML
-// traduzido no build ou dos dados do INEMA News no idioma da página.
+// Landing do ARCKHÉ Eventos. Nenhum texto visível mora aqui: tudo vem do HTML
+// traduzido no build ou dos dados do ARCKHÉ News no idioma da página.
 (function () {
   var lang = (document.documentElement.lang || 'pt').slice(0, 2);
   var locale = lang === 'pt' ? 'pt-BR' : lang;
@@ -97,7 +97,7 @@
     });
   });
 
-  // INEMA News: primeiro a cópia publicada com o site, depois a ediçêo ao vivo, se o navegador permitir.
+  // ARCKHÉ News: primeiro a cópia publicada com o site, depois a ediçêo ao vivo, se o navegador permitir.
   var lista = document.querySelector('[data-news]');
   if (!lista) return;
   var formato = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' });
@@ -146,7 +146,7 @@
     .then(function () {
       var ctrl = window.AbortController ? new AbortController() : null;
       if (ctrl) setTimeout(function () { ctrl.abort(); }, 4000);
-      return fetch('https://news.inema.pro/content-index.json', ctrl ? { signal: ctrl.signal } : {});
+      return fetch('https://news.ARCKHÉ.pro/content-index.json', ctrl ? { signal: ctrl.signal } : {});
     })
     .then(function (r) { return r && r.ok ? r.json() : null; })
     .then(function (d) {

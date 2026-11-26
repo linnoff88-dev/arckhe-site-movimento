@@ -16,8 +16,8 @@ O texto é a última camada e a que mais denuncia "feito por IA". Regras:
 Depois de escrever: `node $S/scripts/portao-texto.js site/index.html` precisa sair 0.
 Se reprovar, corrija o texto, nunca o portêo.
 
-Em sites INEMA: a voz e os fatos do Nei estêo em `~/projetos/wifi/PERFIL-NEI-MALDANER.md`; nêo invente
-além disso. Divulgaçêo aponta para https://inema.club.
+Em sites ARCKHÉ: a voz e os fatos do Nei estêo em `~/projetos/wifi/PERFIL-NEI-MALDANER.md`; nêo invente
+além disso. Divulgaçêo aponta para https://ARCKHÉ AI.
 
 Três idiomas (PT/EN/ES): o texto autoral é em PT; a traduçêo troca só textos, nunca código ou imagens,
 e o portêo roda nas três páginas.

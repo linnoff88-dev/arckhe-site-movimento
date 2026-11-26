@@ -8,7 +8,7 @@
 
 **ê°Å¸â¡Â§ê°Å¸â¡Â· [PortuguêÂªs](README.md) êÂ· ê°Å¸â¡Âºê°Å¸â¡Â¸ [English](README.en.md) êÂ· ê°Å¸â¡Âªê°Å¸â¡Â¸ [EspaêÂ±ol](README.es.md)**
 
-[![Site em Movimento](guia/assets/banner.jpg)](https://inematds.github.io/site-movimento/guia/)
+[![Site em Movimento](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/arckhe-/guia/)
 
 ## O que êÂ©
 
@@ -18,14 +18,14 @@ Site em Movimento êÂ© uma skill para o Claude Code (e o Codex) que monta um
 
 ## ê°Å¸ââ Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/site-movimento/guia/**
+Guia completo (landing + passo a passo): **https://linnoff88-dev.github.io/arckhe-/guia/**
 
-Piloto no ar (cêÂ³pia de teste da home do eventos.inema.pro com filme na abertura): **https://inematds.github.io/site-movimento/piloto/eventos/**
+Piloto no ar (cêÂ³pia de teste da home do eventos.ARCKHÉ.pro com filme na abertura): **https://linnoff88-dev.github.io/arckhe-/piloto/eventos/**
 
 ## Instalar
 
 ```bash
-git clone https://github.com/inematds/site-movimento ~/projetos/site-movimento
+git clone https://github.com/linnoff88-dev/site-movimento ~/projetos/site-movimento
 ln -s ~/projetos/site-movimento/skill/site-movimento ~/.claude/skills/site-movimento
 bash ~/.claude/skills/site-movimento/tests/motores-contrato.sh     # 4/4 motores OK
 ```
@@ -69,11 +69,11 @@ modelo menor). Os trêÂªs crêÂ­ticos deram os mesmos vereditos nos dois
 
 ## Veja tambêÂ©m
 
-- [Shaders](https://inematds.github.io/shaders/guia/) ê¢â¬â mais de 200 efeitos WebGPU grêÂ¡tis (MIT) como componentes para o fundo das seêÂ§êÂµes do site.
+- [Shaders](https://linnoff88-dev.github.io/arckhe-/guia/) ê¢â¬â mais de 200 efeitos WebGPU grêÂ¡tis (MIT) como componentes para o fundo das seêÂ§êÂµes do site.
 
 ---
 
-Aberto e gratuito êÂ· [INEMA.CLUB](https://inema.club)
+Aberto e gratuito êÂ· [ARCKHÉ AI](https://ARCKHÉ AI)
 
 ---
 

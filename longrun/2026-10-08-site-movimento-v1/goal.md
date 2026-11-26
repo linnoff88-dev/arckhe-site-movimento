@@ -5,27 +5,27 @@
 
 ## Resultado
 Skill nova `site-movimento` (site cujo topo é um filme que anda com a rolagem + motion graphics em código,
-motor de vídeo trocável: kling | agnes | kie | custom | código puro), projeto público `inematds/site-movimento`
-com piloto (cópia da home do eventos.inema.pro com filme Kling), 15 peças novas no inema-motion-lab,
+motor de vídeo trocável: kling | agnes | kie | custom | código puro), projeto público `linnoff88-dev/site-movimento`
+com piloto (cópia da home do eventos.ARCKHÉ.pro com filme Kling), 15 peças novas no ARCKHÉ-motion-lab,
 análise de delegaçêo Haiku × topo, guia PT/EN/ES e card no portal.
 
 ## Critérios de pronto (verificáveis)
 
 **Funçêo**
-- [ ] `bash tests/sem-fonte.sh` (site-movimento e inema-motion-lab) → `0 ocorrências`, exit 0
+- [ ] `bash tests/sem-fonte.sh` (site-movimento e ARCKHÉ-motion-lab) → `0 ocorrências`, exit 0
 - [ ] `ls motores/{kling,agnes,kie,custom}.sh` → 4 arquivos; `bash tests/motores-contrato.sh` → 4/4 OK (dry-run: valida args, monta comando, nêo chama)
 - [ ] `python3 scripts/cutscan.py piloto/eventos/assets/*.mp4` → exit 0
 - [ ] `bash scripts/continuity-gate.sh piloto/eventos/frames 4` → PASS
 - [x] `node tests/piloto-secoes.cjs` + `scripts/verificar.js jank` → 0 erros de console, jank máx < 50 ms, Off/On/X-ray funcionam, sem rolagem horizontal em 390 px
-- [ ] `cd ~/projetos/inema-motion-lab && node tools/testar-pecas.cjs` → `20/20 peças OK`
+- [ ] `cd ~/projetos/ARCKHÉ-motion-lab && node tools/testar-pecas.cjs` → `20/20 peças OK`
 - [ ] `python3 ~/.claude/skills/skill-creator-plus/scripts/validate_skill.py ~/.claude/skills/site-movimento` (ou validador equivalente) → OK
 - [ ] `docs/DELEGACAO-MODELOS.md` com tabela medida (peças Haiku × topo: 1ª passada no teste, nº de correções; críticos Haiku × topo no piloto)
-- [ ] `curl -s -o /dev/null -w '%{http_code}' https://inematds.github.io/site-movimento/guia/` (e `/en/`, `/es/`) → 200
+- [ ] `curl -s -o /dev/null -w '%{http_code}' https://linnoff88-dev.github.io/arckhe-/guia/` (e `/en/`, `/es/`) → 200
 - [ ] portal: commit com o card no `origin` (hash no relatório)
 
 **Regressêo**
 - [ ] `~/.claude/skills/scroll-film-studio/SKILL.md` continua lá (só ganha 1 linha apontando a nova)
-- [ ] `cd ~/projetos/inemaeventos && git status --short` → igual ao início (nêo mexer)
+- [ ] `cd ~/projetos/ARCKHÉeventos && git status --short` → igual ao início (nêo mexer)
 - [ ] 5 peças antigas do motion-lab continuam OK no `testar-pecas`
 
 **Limite**
@@ -39,7 +39,7 @@ análise de delegaçêo Haiku × topo, guia PT/EN/ES e card no portal.
 ## Restrições
 - Kling SÓ pela CLI `kling` (assinatura). Agnes/Kie: nêo chamar.
 - Sem referências à fonte (nomes, links, Higgsfield, comunidade) em nada público, nem em mensagens de commit.
-- nêo mexer em: repo `inemaeventos`, site no ar, `scroll-film-studio` (além de 1 linha).
+- nêo mexer em: repo `ARCKHÉeventos`, site no ar, `scroll-film-studio` (além de 1 linha).
 
 ## Portões humanos (parar e perguntar)
 - piloto passar de 800 créditos Kling

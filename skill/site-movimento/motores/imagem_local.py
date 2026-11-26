@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keyframe por imagem local (inemaimg / flux2-klein), sem custo.
+"""Keyframe por imagem local (ARCKHÉimg / flux2-klein), sem custo.
 
 Uso: imagem_local.py <saida.png> "<prompt>" [--ref a.png ...] [--largura 1344] [--altura 768] [--seed N]
 
