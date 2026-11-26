@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Portão de continuidade: prova que o filme é UM movimento de câmera, não uma sequência de cenas.
+"""Portêo de continuidade: prova que o filme é UM movimento de câmera, nêo uma sequência de cenas.
 
 Uso: continuidade.py <pasta-de-quadros> [passo=4]
      (quadros f_*.jpg gerados por montar.py)
 
-Por que não basta conferir as emendas: com o encadeamento, cada clipe começa no último quadro do
-anterior, então as emendas casam por construção. O que escapa é o MEIO de cada clipe, onde o
+Por que nêo basta conferir as emendas: com o encadeamento, cada clipe começa no último quadro do
+anterior, entêo as emendas casam por construçêo. O que escapa é o MEIO de cada clipe, onde o
 modelo pode cortar ou congelar.
 
-Por que não basta um limite fixo de SSIM: um travelling rápido e liso muda quase tudo e marca
+Por que nêo basta um limite fixo de SSIM: um travelling rápido e liso muda quase tudo e marca
 ~0,5; um corte entre dois quadros parecidos marca alto. O que separa corte de movimento é o
 FORMATO LOCAL da curva:
   - movimento liso → cada par parecido com os vizinhos, por mais baixo que seja;
@@ -41,7 +41,7 @@ if len(sys.argv) < 2:
 pasta = sys.argv[1]; passo = int(sys.argv[2]) if len(sys.argv) > 2 else 4
 quadros = sorted(glob.glob(f'{pasta}/f_*.jpg'))[::passo]
 if len(quadros) < 4:
-    sys.exit(f'FALHA: só {len(quadros)} quadros em {pasta} — um portão que passa sem medir é pior que nenhum')
+    sys.exit(f'FALHA: só {len(quadros)} quadros em {pasta} — um portêo que passa sem medir é pior que nenhum')
 notas, nomes = [], []
 ant = cinza(quadros[0])
 for q in quadros[1:]:
@@ -65,6 +65,6 @@ for c in congelados[:6]:
     print('  congelado:', c)
 falha = bool(cortes) or len(congelados) > 2
 if falha:
-    print('REPROVADO. Não construa em cima disto: aproxime os keyframes (passo menor), mantenha o mesmo eixo de câmera e refaça o clipe.')
+    print('REPROVADO. Nêo construa em cima disto: aproxime os keyframes (passo menor), mantenha o mesmo eixo de câmera e refaça o clipe.')
     sys.exit(1)
 print('PASSA — um movimento só')

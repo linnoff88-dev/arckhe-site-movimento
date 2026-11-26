@@ -14,7 +14,7 @@ for m in kling agnes kie custom; do
   extra=(); [ "$m" = custom ] && extra=(env MOTOR_CMD='meu-cli --a {inicio} --b {fim} --p {prompt} --s {segundos} --o {saida}')
   saida=$(DRY_RUN=1 "${extra[@]}" bash "$R/motores/$m.sh" "$T/a.png" "$T/b.png" "slow push in" 5 "$T/o.mp4" 2>&1); rc=$?
   [ $rc -eq 0 ] || erros+=" dry-run rc=$rc"
-  echo "$saida" | grep -q "a.png" || erros+=" dry-run-não-mostra-início"
+  echo "$saida" | grep -q "a.png" || erros+=" dry-run-nêo-mostra-início"
   [ -e "$T/o.mp4" ] && erros+=" dry-run-criou-arquivo"
   if [ -z "$erros" ]; then ok=$((ok+1)); echo "OK $m"; else echo "FALHA $m:$erros"; echo "   $saida" | head -2; fi
 done

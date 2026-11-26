@@ -5,8 +5,8 @@ de início e o último quadro com a imagem de fim.
 Uso: fixacao.py <clipe.mp4> <inicio.png> [fim.png] [--min 0.90]
 
 Métrica: SSIM por janelas 8×8 em 320×180, tons de cinza com desfoque leve. O desfoque é de
-propósito: o motor redesenha ruído e textura fina (asfalto molhado, grão), e o SSIM do ffmpeg em
-resolução cheia dá ~0,6 mesmo quando a imagem é a mesma. Medido no piloto (Kling v3.0):
+propósito: o motor redesenha ruído e textura fina (asfalto molhado, grêo), e o SSIM do ffmpeg em
+resoluçêo cheia dá ~0,6 mesmo quando a imagem é a mesma. Medido no piloto (Kling v3.0):
 mesmo quadro ≥ 0,98; imagens diferentes do mesmo filme ~0,15–0,4.
 Leitura: ≥ 0,90 = fixa (serve para encadear). Sai com 1 se algum lado ficar abaixo de --min.
 """
@@ -51,5 +51,5 @@ if a.fim:
     s1 = ssim(cinza(a.fim), cinza(quadro(True)))
     print(f'fim     {s1:.3f}')
     ok &= s1 >= a.min
-print('FIXA' if ok else 'NÃO FIXA')
+print('FIXA' if ok else 'NêO FIXA')
 sys.exit(0 if ok else 1)

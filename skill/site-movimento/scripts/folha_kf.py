@@ -6,7 +6,7 @@ Uso: folha_kf.py <pasta-kf> [limite=0.30]
   - mostra a semelhança estrutural de cada par vizinho (cinza 256×144, nota tipo SSIM);
   - marca pares que mudaram demais: é ali que um clipe de 5 s vai cortar.
 
-Nota baixa quer dizer OLHE, não REPROVA. O defeito real é virar o eixo da câmera (vista lateral vira
+Nota baixa quer dizer OLHE, nêo REPROVA. O defeito real é virar o eixo da câmera (vista lateral vira
 vista de cima, horizonte inclina), trocar de lugar ou de luz. Refaça o keyframe marcado com um passo
 menor, ou ponha um keyframe entre os dois.
 """
@@ -45,7 +45,7 @@ def recorte(im, z, cx, cy):
     return im.crop((round(x0), round(y0), round(x0 + w), round(y0 + h)))
 
 def passo(a, b):
-    """Melhor nota entre A e B procurando a ESCALA e o centro: um passo de aproximação (ou recuo)
+    """Melhor nota entre A e B procurando a ESCALA e o centro: um passo de aproximaçêo (ou recuo)
     muda o quadro inteiro de lugar, mas o centro de A ampliado tem que parecer com B."""
     melhor, onde = -1.0, (1.0, 0.5, 0.5, 'igual')
     gb, ga = cinza(b), cinza(a)
@@ -68,7 +68,7 @@ for i in range(len(files) - 1):
     s, (z, cx, cy, sent) = passo(IMS[i], IMS[i + 1])
     mark = 'QUEBRA? eixo, lugar ou luz provavelmente mudou: refaça ou ponha um keyframe no meio' if s < 0.12 else ('OLHE' if s < thr else 'ok')
     if sent == 'igual' and s > 0.95:
-        mark = 'PARADO: o keyframe não andou (o modelo devolveu a referência): use kf_aproxima.py'
+        mark = 'PARADO: o keyframe nêo andou (o modelo devolveu a referência): use kf_aproxima.py'
     if s < thr or mark.startswith('PARADO'): flags.append(i)
     print(f'  {os.path.basename(files[i]):<14} -> {os.path.basename(files[i + 1]):<14} {s:.2f}  {sent} {z}x  {mark}')
 
@@ -88,5 +88,5 @@ while os.path.getsize(out) > 98000 and q > 35:
     q -= 8; sheet.save(out, quality=q)
 if os.path.getsize(out) > 98000:
     sheet.thumbnail((int(sheet.width * .7), int(sheet.height * .7))); sheet.save(out, quality=q)
-print(f'folha: {out} ({os.path.getsize(out) // 1024} KB)  borda laranja = mudança grande em relação ao anterior')
+print(f'folha: {out} ({os.path.getsize(out) // 1024} KB)  borda laranja = mudança grande em relaçêo ao anterior')
 print('Olhe a folha. Refaça todo keyframe que vire o eixo da câmera, troque de lugar ou de luz.')

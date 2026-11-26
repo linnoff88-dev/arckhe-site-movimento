@@ -3,8 +3,8 @@
 # Uso: MOTOR=kling scripts/loop.sh <saida.mp4> <imagem.png> "<movimento que volta ao começo>" [segundos=5]
 #
 # Peça um movimento que VOLTA: "o disco dá uma volta lenta completa", "a luz passa e some",
-# "as placas piscam e voltam". Uma viagem não volta ao ponto de partida.
-# Se a costura aparecer (fixação < 0,90 no fim), rode scripts/loopfix.py no resultado.
+# "as placas piscam e voltam". Uma viagem nêo volta ao ponto de partida.
+# Se a costura aparecer (fixaçêo < 0,90 no fim), rode scripts/loopfix.py no resultado.
 # No site: <video muted playsinline loop autoplay>.
 set -euo pipefail
 AQUI=$(cd "$(dirname "$0")" && pwd)
@@ -13,8 +13,8 @@ MOTOR=${MOTOR:-kling}
 bash "$AQUI/../motores/$MOTOR.sh" "$IMG" "$IMG" "$PROMPT" "$SEG" "$OUT"
 python3 "$AQUI/fixacao.py" "$OUT" "$IMG" "$IMG" || echo "costura visível: python3 $AQUI/loopfix.py $OUT"
 python3 "$AQUI/cortes.py" "$OUT"
-# Loop que quase não se mexe é dinheiro jogado fora. Medido no piloto: "flicker softly" deu 1,5/255
-# de variação média (parado na tela). Abaixo de 4, peça um movimento mais visível.
+# Loop que quase nêo se mexe é dinheiro jogado fora. Medido no piloto: "flicker softly" deu 1,5/255
+# de variaçêo média (parado na tela). Abaixo de 4, peça um movimento mais visível.
 python3 - "$OUT" <<'PY'
 import glob, os, subprocess, sys, tempfile
 import numpy as np

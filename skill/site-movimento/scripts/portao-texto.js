@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// Portão de texto: confere o que a pessoa LÊ na página. Sem modelo, sem rede, sem custo.
+// Portêo de texto: confere o que a pessoa LÊ na página. Sem modelo, sem rede, sem custo.
 //
 // Reprova:
 //  - a página explicando a si mesma ("role para baixo", "esta página mostra...") em vez de vender;
 //  - vocabulário de filmagem no texto (câmera, zoom, travelling, plano-sequência): o roteiro do filme
-//    é instrução de produção, não texto para o visitante;
-//  - travessão (— ou –) e jargão de IA ("revolucionário", "potencializar", "próximo nível"...);
+//    é instruçêo de produçêo, nêo texto para o visitante;
+//  - travessêo (— ou –) e jargêo de IA ("revolucionário", "potencializar", "próximo nível"...);
 //  - texto provisório (lorem ipsum, TODO, "seu título aqui");
 //  - quadro do filme repetido como <img> logo abaixo (mostra a mesma imagem duas vezes e mata o final).
 // Vale para PT, EN e ES.
@@ -27,7 +27,7 @@ const REGRAS = [
   [/lorem\s+ipsum/i, 'lorem ipsum'],
   [/\b(TODO|FIXME|TBD|XXX)\b/, 'marcador provisório'],
   [/\b(seu|your|tu)\s+(título|texto|headline|text|titular)\s+(aqui|here)\b/i, 'texto de modelo'],
-  [/\[(nome|título|resultado|name|title)[^\]]*\]/i, 'colchete de modelo não preenchido'],
+  [/\[(nome|título|resultado|name|title)[^\]]*\]/i, 'colchete de modelo nêo preenchido'],
 ];
 
 const JARGAO = /\b(revolucion\w+|incrível|incríveis|potencializ\w+|alavanc\w+|desbloque\w+|próximo\s+nível|sem\s+esforço|game[-\s]?chang\w+|unlock\w*|seamless\w*|supercharg\w+|leverag\w+|cutting[-\s]edge|next[-\s]level|elevat\w+|delve\w*|increíble\w*|potenciar|siguiente\s+nivel)\b/i;
@@ -45,16 +45,16 @@ let falhou = false;
 
 for (const arq of arquivos) {
   let html;
-  try { html = fs.readFileSync(arq, 'utf8'); } catch (e) { console.error(`✗ ${arq} — não li: ${e.message}`); falhou = true; continue; }
+  try { html = fs.readFileSync(arq, 'utf8'); } catch (e) { console.error(`✗ ${arq} — nêo li: ${e.message}`); falhou = true; continue; }
   const texto = visivel(html);
   const puro = texto.replace(/<[^>]+>/g, ' ');
   const achados = [];
   const trecho = i => puro.slice(Math.max(0, i - 40), i + 40).replace(/\s+/g, ' ').trim();
 
   const tr = /[—–]/.exec(puro);
-  if (tr) achados.push(`  travessão no texto visível (use ponto, vírgula ou dois-pontos)\n    …${trecho(tr.index)}…`);
+  if (tr) achados.push(`  travessêo no texto visível (use ponto, vírgula ou dois-pontos)\n    …${trecho(tr.index)}…`);
   const jg = JARGAO.exec(puro);
-  if (jg) achados.push(`  jargão: "${jg[0]}" (diga a coisa simples)\n    …${trecho(jg.index)}…`);
+  if (jg) achados.push(`  jargêo: "${jg[0]}" (diga a coisa simples)\n    …${trecho(jg.index)}…`);
   for (const [re, porque] of REGRAS) {
     const m = re.exec(puro);
     if (m) achados.push(`  ${porque}\n    …${trecho(m.index)}…`);
@@ -66,6 +66,6 @@ for (const arq of arquivos) {
   else console.log(`✓ ${arq} — texto limpo`);
 }
 if (falhou) {
-  console.error('\nREPROVADO. Reescreva o texto para vender o assunto; não explique o mecanismo. Corrija o texto, nunca o portão.');
+  console.error('\nREPROVADO. Reescreva o texto para vender o assunto; nêo explique o mecanismo. Corrija o texto, nunca o portêo.');
   process.exit(1);
 }

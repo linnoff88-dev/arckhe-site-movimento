@@ -3,8 +3,8 @@
 
 Uso: imagem_local.py <saida.png> "<prompt>" [--ref a.png ...] [--largura 1344] [--altura 768] [--seed N]
 
-Com --ref, o modelo recebe as imagens como referência (edição): é assim que o keyframe N+1
-nasce do N e o filme fica no mesmo lugar. Servidor: $IMG_API (padrão http://localhost:8000).
+Com --ref, o modelo recebe as imagens como referência (ediçêo): é assim que o keyframe N+1
+nasce do N e o filme fica no mesmo lugar. Servidor: $IMG_API (padrêo http://localhost:8000).
 """
 import argparse, base64, json, os, sys, time, urllib.request
 
@@ -31,7 +31,7 @@ resp = json.load(urllib.request.urlopen(req, timeout=900))
 
 
 def achar_b64(o):
-    """A resposta varia por versão do servidor: procura a primeira string base64 de imagem."""
+    """A resposta varia por versêo do servidor: procura a primeira string base64 de imagem."""
     if isinstance(o, str) and len(o) > 1000:
         return o.split(',', 1)[-1]
     if isinstance(o, dict):

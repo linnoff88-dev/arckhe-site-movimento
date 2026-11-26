@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // capturar.js <url> <pasta> [l]x[a] — captura de um site de referência (passo 1):
-//   anim_XX.jpg : 10 quadros do primeiro ecrã em 4 s (para ver o movimento do topo)
+//   anim_XX.jpg : 10 quadros do primeiro ecrê em 4 s (para ver o movimento do topo)
 //   s_XXX.jpg   : a página inteira em passos de 0,7 tela, com rolagem de verdade
 //   page.txt    : texto visível, fontes, cores, inventário de canvas/vídeo/WebGL
-// Use em todo link de referência, para que a leitura seja feita dos pixels e não da memória.
+// Use em todo link de referência, para que a leitura seja feita dos pixels e nêo da memória.
 const path = require('path'), fs = require('fs');
 const { puppeteer, chromePath } = require('./_browser.js');
 const [, , url, out, size = '1440x900'] = process.argv;

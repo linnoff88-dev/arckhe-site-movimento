@@ -1,8 +1,8 @@
 /* Motor de rolagem dos sites da skill site-movimento.
    Scrub(opts) — canvas + quadros JPEG extraídos, conduzidos pela rolagem de um elemento "driver".
                  Janela deslizante de ImageBitmap (decodifica fora da thread principal), cabeça de leitura
-                 suavizada (lerp) e o quadro mais próximo quando o exato ainda não chegou. Nunca <video>:
-                 vídeo não anda quadro a quadro com a rolagem.
+                 suavizada (lerp) e o quadro mais próximo quando o exato ainda nêo chegou. Nunca <video>:
+                 vídeo nêo anda quadro a quadro com a rolagem.
    Loop(canvas, render) — loop desenhado em código: render(ctx, t, w, h, dpr). Só roda na tela e com a
                  chave de movimento ligada; em Parado pinta um quadro fixo (t = opts.still).
    Um único requestAnimationFrame para tudo. Contrato de teste: ?jump=<y> e window.__ready. */
@@ -66,7 +66,7 @@
     let garantidos = -1;
     function ensure(center) {
       // Recalcula a janela quando a cabeça anda 3 quadros OU quando chegaram quadros novos: sem a 2ª
-      // condição, os quadros que terminam de baixar depois da 1ª chamada ficam sem bitmap e são
+      // condiçêo, os quadros que terminam de baixar depois da 1ª chamada ficam sem bitmap e sêo
       // decodificados todos de uma vez na primeira rolagem (travada medida de 150–315 ms no piloto).
       if (Math.abs(center - bmpCenter) < 3 && garantidos === nLoaded) return;
       bmpCenter = center; garantidos = nLoaded;

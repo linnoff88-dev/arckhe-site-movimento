@@ -8,12 +8,12 @@
 #    "segundos": 5,
 #    "clipes": [{"id":"c1","inicio":"kf/kf01.png","fim":"kf/kf02.png","prompt":"..."}, ...]}
 #
-# Regras (não negociáveis):
+# Regras (nêo negociáveis):
 #   - estritamente em ordem, nunca em paralelo;
 #   - o clipe 1 começa no seu keyframe; o clipe N>1 começa no ÚLTIMO QUADRO REAL do clipe N-1
 #     (pixels extraídos, nunca o keyframe) e termina no keyframe seguinte;
 #   - depois de cada clipe: fixacao.py (o motor respeitou os quadros?) e cortes.py (corte escondido?).
-#     Corte escondido PARA a cadeia (saída 3): aproxime os keyframes e refaça, não emende com fade;
+#     Corte escondido PARA a cadeia (saída 3): aproxime os keyframes e refaça, nêo emende com fade;
 #   - retomável: clipe que já está no disco é pulado.
 # Rode vetor.py no roteiro antes de gastar qualquer crédito.
 set -uo pipefail
@@ -37,9 +37,9 @@ print('\t'.join([c['id'],c['inicio'],c['fim'],' '.join(c['prompt'].split())]))")
   if [ -s "clipes/$ID.mp4" ]; then echo "[$ID] já existe, pulando"; ANT="clipes/$ID.ultimo.png"; continue; fi
   echo "[$ID] início=$INI fim=$FIM"
   bash "$M" "$INI" "$FIM" "$PROMPT" "$SEG" "clipes/$ID.mp4" || { echo "[$ID] o motor falhou (veja clipes/$ID.mp4.json)"; exit 1; }
-  python3 "$AQUI/fixacao.py" "clipes/$ID.mp4" "$INI" "$FIM" || echo "[$ID] ATENÇÃO: o motor não respeitou os quadros; olhe antes de seguir"
+  python3 "$AQUI/fixacao.py" "clipes/$ID.mp4" "$INI" "$FIM" || echo "[$ID] ATENÇêO: o motor nêo respeitou os quadros; olhe antes de seguir"
   python3 "$AQUI/cortes.py" "clipes/$ID.mp4" || {
-    echo "[$ID] CORTE ESCONDIDO dentro do clipe. Não use. Aproxime os keyframes, mantenha o eixo,"
+    echo "[$ID] CORTE ESCONDIDO dentro do clipe. Nêo use. Aproxime os keyframes, mantenha o eixo,"
     echo "      apague clipes/$ID.mp4 e rode de novo."; exit 3; }
   ANT="clipes/$ID.ultimo.png"
 done

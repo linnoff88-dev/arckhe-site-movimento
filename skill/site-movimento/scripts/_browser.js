@@ -1,6 +1,6 @@
 // Navegador compartilhado por fotos.js, foto.js, capturar.js e verificar.js.
 // Usa o Playwright (Chromium que ele mesmo instala) com uma camada fina que imita a parte da API
-// do puppeteer que os scripts usam. Motivo: o Chromium do snap não conversa bem com puppeteer-core,
+// do puppeteer que os scripts usam. Motivo: o Chromium do snap nêo conversa bem com puppeteer-core,
 // e o Playwright já está instalado nos projetos da máquina.
 //
 // Onde procurar o Playwright, nesta ordem: $PLAYWRIGHT_DIR, ./node_modules (pasta scripts), ~/projetos/agent-browser.
@@ -14,7 +14,7 @@ function carregarPlaywright() {
     const p = path.join(l, 'node_modules', 'playwright');
     if (fs.existsSync(p)) return require(p);
   }
-  console.error('Playwright não encontrado. Rode uma vez: cd "' + __dirname + '" && npm install && npx playwright install chromium');
+  console.error('Playwright nêo encontrado. Rode uma vez: cd "' + __dirname + '" && npm install && npx playwright install chromium');
   process.exit(2);
 }
 const pw = carregarPlaywright();

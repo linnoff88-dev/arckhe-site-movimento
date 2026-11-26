@@ -1,17 +1,17 @@
-# Funções comuns dos motores (source, não executar).
+# Funções comuns dos motores (source, nêo executar).
 # Contrato: motores/<motor>.sh <inicio.png> <fim.png|-> "<prompt>" <segundos> <saida.mp4>
 #   saída: <saida.mp4>, <saida.mp4>.json (resposta crua do serviço) e <saida>.ultimo.png
 #   variáveis comuns: DRY_RUN=1 (só mostra o que faria), LEDGER=<arquivo.tsv> (anota cada job)
 
 contrato_args() {
   [ $# -eq 5 ] || { echo "uso: $(basename "$0") <inicio.png> <fim.png|-> \"<prompt>\" <segundos> <saida.mp4>" >&2; exit 2; }
-  [ -s "$1" ] || { echo "início não existe: $1" >&2; exit 2; }
-  [ "$2" = "-" ] || [ -s "$2" ] || { echo "fim não existe: $2" >&2; exit 2; }
+  [ -s "$1" ] || { echo "início nêo existe: $1" >&2; exit 2; }
+  [ "$2" = "-" ] || [ -s "$2" ] || { echo "fim nêo existe: $2" >&2; exit 2; }
   [ -n "$3" ] || { echo "prompt vazio" >&2; exit 2; }
   python3 -c "import sys; float(sys.argv[1])" "$4" 2>/dev/null || { echo "segundos inválido: $4" >&2; exit 2; }
 }
 
-# Baixa uma URL para um arquivo com User-Agent de navegador (alguns CDNs recusam o padrão).
+# Baixa uma URL para um arquivo com User-Agent de navegador (alguns CDNs recusam o padrêo).
 baixar() {
   python3 - "$1" "$2" <<'PY'
 import sys, urllib.request

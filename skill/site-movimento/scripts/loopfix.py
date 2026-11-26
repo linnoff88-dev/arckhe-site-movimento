@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fecha a costura de um loop quando o primeiro quadro não bate com o último.
+"""Fecha a costura de um loop quando o primeiro quadro nêo bate com o último.
 
 Uso: loopfix.py <loop.mp4> [min_quadros=48]
 Acha o quadro k (depois do início) mais parecido com o ÚLTIMO e recodifica o clipe como k..fim,

@@ -8,9 +8,9 @@ quadro final e acelera ao sair do quadro inicial do seguinte. A câmera para por
 depois dá um pulo; na rolagem isso vira um soluço em cada emenda.
 
 Em cada pico (mudança entre quadros vizinhos > 4× a mediana local) remove os quadros parados dos
-dois lados e insere quadros intermediários com compensação de movimento (ffmpeg minterpolate, mci),
+dois lados e insere quadros intermediários com compensaçêo de movimento (ffmpeg minterpolate, mci),
 para o passo ficar constante. Grava film/master_smooth.mp4, refaz frames/ (1280 px, q6) e atualiza
-frames/manifest.json. Olhe os intermediários: em vãos muito grandes (> 14 quadros) o minterpolate
+frames/manifest.json. Olhe os intermediários: em vêos muito grandes (> 14 quadros) o minterpolate
 pode borrar detalhe fino.
 """
 import sys, os, subprocess, glob, json, shutil, tempfile
@@ -52,7 +52,7 @@ while i < len(files):
                         f'tpad=stop_mode=clone:stop_duration=1,minterpolate=fps={n + 1}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1', f'{pair}/m_%03d.png'], check=True)
         mids = sorted(glob.glob(f'{pair}/m_*.png'))[1:n + 1]   # pula a cópia de a
         out += mids
-        print(f'emenda {jn}: parada -{k} / -{m}, vão {gap:.1f} contra passo {med:.1f}, {len(mids)} intermediários')
+        print(f'emenda {jn}: parada -{k} / -{m}, vêo {gap:.1f} contra passo {med:.1f}, {len(mids)} intermediários')
         i = b; jn += 1
         continue
     out.append(files[i]); i += 1

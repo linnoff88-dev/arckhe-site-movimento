@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Filme VERTICAL (celular): 3 clipes Kling 9:16 em cadeia sobre os keyframes de kf-v/.
-# O Kling segue a proporção da imagem de entrada (o image_to_video não tem aspect_ratio).
+# O Kling segue a proporçêo da imagem de entrada (o image_to_video nêo tem aspect_ratio).
 set -euo pipefail
 cd "$(dirname "$0")"
 S=../../../skill/site-movimento; K=$S/motores/kling.sh; FX=$S/scripts/fixacao.py; CS=$S/scripts/cortes.py

@@ -1,10 +1,10 @@
-/* Camada de movimento do piloto: filme de abertura + um gráfico em código por seção.
+/* Camada de movimento do piloto: filme de abertura + um gráfico em código por seçêo.
    Depende de vendor/chave-movimento.js e vendor/motor-rolagem.js (carregados antes). */
 (function () {
   var reduzido = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var parado = function () { return reduzido || (window.Movimento && !window.Movimento.mexendo); };
   var lim = function (v) { return Math.max(0, Math.min(1, v)); };
-  // progresso de uma seção: 0 quando o topo dela entra por baixo, 1 quando o meio dela passa do meio da tela
+  // progresso de uma seçêo: 0 quando o topo dela entra por baixo, 1 quando o meio dela passa do meio da tela
   function progresso(el) {
     var r = el.getBoundingClientRect(), vh = innerHeight;
     return lim((vh - r.top) / (vh * 0.5 + r.height * 0.5));
@@ -45,14 +45,14 @@
     if (fim) fim.style.opacity = (0.5 * lim((p - 0.8) / 0.2)).toFixed(3);  // escurece o painel filmado enquanto o real sobe
   }
   var filme = null;
-  // celular em pé: filme vertical (frames-v/, clipes 9:16); se não existir, o horizontal cobrindo a tela
+  // celular em pé: filme vertical (frames-v/, clipes 9:16); se nêo existir, o horizontal cobrindo a tela
   var VERT = matchMedia('(max-width: 719px) and (orientation: portrait)').matches;
   function manifesto(dir) { return fetch(dir + '/manifest.json').then(function (r) { if (!r.ok) throw r.status; return r.json(); }).then(function (m) { m.dir = dir; return m; }); }
   (VERT ? manifesto('frames-v').catch(function () { VERT = false; return manifesto('frames'); }) : manifesto('frames')).then(function (m) {
     document.documentElement.classList.toggle('filme-vertical', VERT);
     filme = MotionEngine.Scrub({
       canvas: document.getElementById('tela'), driver: secFilme, count: m.count, fps: 24, dpr: 1,
-      // composição centrada (perspectiva de um ponto): aguenta cobrir a tela do celular sem perder o assunto
+      // composiçêo centrada (perspectiva de um ponto): aguenta cobrir a tela do celular sem perder o assunto
       maxCrop: innerWidth < 720 ? 0.8 : 0.22,
       src: function (i) { return m.dir + '/f_' + String(i + 1).padStart(4, '0') + '.jpg'; },
       onProgress: function (p) { batidasEm(p); },
@@ -62,13 +62,13 @@
   }).catch(function (e) { console.error('manifest', e); window.__ready = true; });
   batidasEm(0);
 
-  /* ---------- áreas: moldura que desliza até o cartão ativo ---------- */
+  /* ---------- áreas: moldura que desliza até o cartêo ativo ---------- */
   var vitrine = document.querySelector('.vitrine');
   if (vitrine) {
     var moldura = document.createElement('span');
     moldura.className = 'moldura';
     moldura.setAttribute('aria-hidden', 'true');
-    moldura.dataset.xray = 'moldura que desliza com mola até o cartão sob o mouse ou o foco';
+    moldura.dataset.xray = 'moldura que desliza com mola até o cartêo sob o mouse ou o foco';
     moldura.dataset.xrayTool = 'code';
     vitrine.appendChild(moldura);
     var ir = function (card) {
@@ -84,7 +84,7 @@
     vitrine.addEventListener('mouseleave', function () { moldura.style.opacity = '0'; });
   }
 
-  /* ---------- agenda: rota com avião que anda com a rolagem ---------- */
+  /* ---------- agenda: rota com aviêo que anda com a rolagem ---------- */
   var agenda = document.querySelector('.agenda');
   if (agenda) {
     var NS = 'http://www.w3.org/2000/svg';
@@ -92,7 +92,7 @@
     var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('class', 'rota'); svg.setAttribute('viewBox', '0 0 1000 70'); svg.setAttribute('preserveAspectRatio', 'none');
     svg.setAttribute('aria-hidden', 'true');
-    svg.dataset.xray = 'rota das turmas · o avião avança com a rolagem e acende cada parada';
+    svg.dataset.xray = 'rota das turmas · o aviêo avança com a rolagem e acende cada parada';
     svg.dataset.xrayTool = 'code';
     var d = 'M 20 50 C 260 50 300 14 500 22 S 760 52 980 18';
     svg.innerHTML = '<path class="trajeto" d="' + d + '"/><path class="feito" d="' + d + '"/>';
@@ -121,12 +121,12 @@
     });
   }
 
-  /* ---------- gravados: barra de gravação ---------- */
+  /* ---------- gravados: barra de gravaçêo ---------- */
   var gravados = document.querySelector('.gravados');
   if (gravados) {
     var rec = document.createElement('div');
     rec.className = 'rec'; rec.setAttribute('aria-hidden', 'true');
-    rec.dataset.xray = 'barra de gravação · enche com a rolagem, relógio conta junto';
+    rec.dataset.xray = 'barra de gravaçêo · enche com a rolagem, relógio conta junto';
     rec.dataset.xrayTool = 'code';
     rec.innerHTML = '<span class="ponto"></span><span>REC</span><span class="fita"><i></i></span><span class="tempo">00:00</span>';
     gravados.querySelector('.bloco-topo').after(rec);
@@ -199,14 +199,14 @@
     });
   }
 
-  /* ---------- rodapé: um avião decola uma vez ---------- */
+  /* ---------- rodapé: um aviêo decola uma vez ---------- */
   var rodape = document.querySelector('.rodape');
   if (rodape) {
     var NS4 = 'http://www.w3.org/2000/svg';
     var dec = document.createElementNS(NS4, 'svg');
     dec.setAttribute('class', 'decola'); dec.setAttribute('viewBox', '0 0 1000 60'); dec.setAttribute('preserveAspectRatio', 'none');
     dec.setAttribute('aria-hidden', 'true');
-    dec.dataset.xray = 'decolagem · o avião sai quando o rodapé aparece';
+    dec.dataset.xray = 'decolagem · o aviêo sai quando o rodapé aparece';
     dec.dataset.xrayTool = 'code';
     var dd = 'M -20 58 C 300 58 600 40 1020 2';
     dec.innerHTML = '<path class="rastro" d="' + dd + '"/><path class="aviao" d="M -14 0 L 10 -3 L 16 0 L 10 3 Z M -2 -1 L -8 -12 L -3 -12 L 6 -1 Z M -2 1 L -8 12 L -3 12 L 6 1 Z"/>';

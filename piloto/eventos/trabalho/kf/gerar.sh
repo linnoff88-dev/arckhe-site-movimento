@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Keyframes 2-4 do piloto por aproximação: cada um é o centro do anterior, ampliado e redesenhado.
+# Keyframes 2-4 do piloto por aproximaçêo: cada um é o centro do anterior, ampliado e redesenhado.
 # Mira no painel de partidas (centro ~0.5,0.48 no kf01). Pula o que já existe.
 set -euo pipefail
 cd "$(dirname "$0")"

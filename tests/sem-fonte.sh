@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Portão: nenhum arquivo publicável cita a origem do método (pessoas, comunidade, ferramentas de
+# Portêo: nenhum arquivo publicável cita a origem do método (pessoas, comunidade, ferramentas de
 # terceiros, links de afiliado) nem os nomes antigos dos scripts. Roda antes de todo push.
 # Uso: tests/sem-fonte.sh [pasta=raiz do repo]   → "0 ocorrências" e saída 0
 set -uo pipefail

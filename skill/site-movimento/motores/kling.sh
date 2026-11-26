@@ -5,13 +5,13 @@
 #   motores/kling.sh <inicio.png> <fim.png|-> "<prompt>" <segundos> <saida.mp4>
 #   → <saida.mp4>, <saida.mp4>.json (resposta crua, com o id do job) e <saida>.ultimo.png
 #
-# Modelo kling-video-v3_0: o único da conta com quadro final (tail_image) e duração livre 3–15 s.
+# Modelo kling-video-v3_0: o único da conta com quadro final (tail_image) e duraçêo livre 3–15 s.
 # Medido (08/10/2026): 720p com quadro final é aceito (o servidor anuncia "exige 1080p"), fixa os dois
 # lados (0,99 / 0,91–0,99 em fixacao.py) e custa 30 créditos por clipe de 5 s sem áudio.
-# O servidor liga prefer_multi_shots e áudio por padrão: os dois vão desligados aqui.
-# Variáveis: KLING_MODELO, KLING_RESOLUCAO (720p|1080p, padrão 720p), KLING_POLL (s, padrão 900),
+# O servidor liga prefer_multi_shots e áudio por padrêo: os dois vêo desligados aqui.
+# Variáveis: KLING_MODELO, KLING_RESOLUCAO (720p|1080p, padrêo 720p), KLING_POLL (s, padrêo 900),
 #            DRY_RUN=1, LEDGER=<arquivo.tsv>.
-# O job é PAGO e não cancela: a resposta crua é gravada antes de procurar a URL.
+# O job é PAGO e nêo cancela: a resposta crua é gravada antes de procurar a URL.
 set -euo pipefail
 source "$(dirname "$0")/_comum.sh"
 contrato_args "$@"

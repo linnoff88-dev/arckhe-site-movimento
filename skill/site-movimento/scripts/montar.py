@@ -8,9 +8,9 @@ Do clipe 2 em diante, comece no quadro 1: o quadro 0 é o último do clipe anter
 e repeti-lo dá uma travadinha. Use o início do primeiro trecho para cortar uma cabeça parada.
 
 Concatena a 24 qps, grava <site>/film/master.mp4, extrai TODOS os quadros (1280 px, q5) em
-<site>/frames/ (nunca pule quadros: menos quadros vira apresentação de slides), grava
+<site>/frames/ (nunca pule quadros: menos quadros vira apresentaçêo de slides), grava
 frames/manifest.json {count, seam} (seam = cor da borda de baixo do último quadro, para a passagem
-do filme para a seção seguinte) e mostra os piores SSIM entre quadros vizinhos do master
+do filme para a seçêo seguinte) e mostra os piores SSIM entre quadros vizinhos do master
 (valores muito baixos = corte ou tranco; rode suavizar.py para os trancos nas emendas).
 
 --vertical: filme do celular (clipes 9:16). Grava film/master-v.mp4 (1080x1920) e os quadros em

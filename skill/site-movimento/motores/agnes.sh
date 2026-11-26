@@ -8,9 +8,9 @@
 #   - limite de ~1 vídeo por minuto: espaçar os clipes;
 #   - num_frames precisa ser 8n+1 (81 = ~3,4 s a 24 qps); teto por altura: 720p 481, 1080p 241, 480p 961;
 #   - a consulta do job é em <base>/agnesapi?video_id= (SEM o /v1 do POST); o id vem em video_id, task_id ou id;
-#   - imagens vão como data URI base64 em JPEG (não precisa URL pública; PNG estourou 120 s no envio);
-#   - envio com 300 s de espera; tempo esgotado NÃO é repetido (o job pode ter nascido e seria pago 2x).
-# Exige quadro de fim: sem ele o modo keyframes não existe (use outro motor para "só início").
+#   - imagens vêo como data URI base64 em JPEG (nêo precisa URL pública; PNG estourou 120 s no envio);
+#   - envio com 300 s de espera; tempo esgotado NêO é repetido (o job pode ter nascido e seria pago 2x).
+# Exige quadro de fim: sem ele o modo keyframes nêo existe (use outro motor para "só início").
 set -euo pipefail
 source "$(dirname "$0")/_comum.sh"
 contrato_args "$@"
@@ -25,7 +25,7 @@ if [ "${DRY_RUN:-0}" = 1 ]; then
   exit 0
 fi
 KEY=$(chave AGNES_API_KEY "${AGNES_ENV_FILE:-}")
-[ -n "$KEY" ] || { echo "agnes: AGNES_API_KEY não definida" >&2; exit 2; }
+[ -n "$KEY" ] || { echo "agnes: AGNES_API_KEY nêo definida" >&2; exit 2; }
 mkdir -p "$(dirname "$OUT")"
 
 MOTOR_CHAVE="$KEY" python3 - "$BASE" "$PROMPT" "$QUADROS" "$FPS" "$W" "$H" "$INI" "$FIM" "$OUT" <<'PY'
@@ -43,7 +43,7 @@ H = {'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'}
 corpo = {'model': 'agnes-video-v2.0', 'prompt': prompt, 'num_frames': int(quadros), 'frame_rate': int(fps),
          'width': int(w), 'height': int(h), 'extra_body': {'image': [uri(ini), uri(fim)], 'mode': 'keyframes'}}
 r = None
-for t in range(1, 5):  # 503 transitório e 429 (≈6/min) são comuns no envio
+for t in range(1, 5):  # 503 transitório e 429 (≈6/min) sêo comuns no envio
     try:
         r = json.load(urllib.request.urlopen(urllib.request.Request(api + '/videos', json.dumps(corpo).encode(), H), timeout=300))
         break
@@ -52,7 +52,7 @@ for t in range(1, 5):  # 503 transitório e 429 (≈6/min) são comuns no envio
         if e.code not in (429, 500, 502, 503, 504): sys.exit(1)
         time.sleep(70 if e.code == 429 else 8 * t)
 if r is None:
-    sys.exit('agnes: a API não aceitou o job após 4 tentativas')
+    sys.exit('agnes: a API nêo aceitou o job após 4 tentativas')
 open(out + '.json', 'w').write(json.dumps(r))  # id do job gravado antes de esperar
 vid = r.get('video_id') or r.get('task_id') or r.get('id')
 if not vid:

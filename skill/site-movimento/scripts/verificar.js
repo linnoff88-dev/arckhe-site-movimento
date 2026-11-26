@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /*
- * Verificação visual (sem modelo).
+ * Verificaçêo visual (sem modelo).
  *
- *   node verificar.js shot <url> <saida.png> [largura] [altura]   # foto na posição de ?jump
+ *   node verificar.js shot <url> <saida.png> [largura] [altura]   # foto na posiçêo de ?jump
  *   node verificar.js jank <url>                                   # rola a página toda e mede travadas
  *
  * Roda num navegador próprio, fora de painel de prévia (painel escondido congela o rAF e devolve
  * foto preta ou velha). A página testada precisa seguir o contrato de teste: ?jump=<y> abre já rolada
  * e assentada, e window.__ready === true quando estiver pronta. Se __ready nunca chegar, o teste
- * REPROVA: foto de página que não terminou de carregar não prova nada.
+ * REPROVA: foto de página que nêo terminou de carregar nêo prova nada.
  */
 const { puppeteer, chromePath } = require('./_browser.js');
 

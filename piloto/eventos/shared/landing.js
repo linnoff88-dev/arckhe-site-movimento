@@ -97,7 +97,7 @@
     });
   });
 
-  // INEMA News: primeiro a cópia publicada com o site, depois a edição ao vivo, se o navegador permitir.
+  // INEMA News: primeiro a cópia publicada com o site, depois a ediçêo ao vivo, se o navegador permitir.
   var lista = document.querySelector('[data-news]');
   if (!lista) return;
   var formato = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' });

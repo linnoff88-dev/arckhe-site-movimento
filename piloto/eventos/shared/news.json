@@ -22,7 +22,7 @@
    "url": "https://inematds.github.io/yt-pubx/guia/",
    "pt": {
     "titulo": "yt-pubx — Publique vídeos no YouTube com um comando",
-    "resumo": "Publica vídeos em vários canais do YouTube, criando título, descrição, tags e miniatura, com opção de agendar."
+    "resumo": "Publica vídeos em vários canais do YouTube, criando título, descriçêo, tags e miniatura, com opçêo de agendar."
    },
    "en": {
     "titulo": "yt-pubx — Publish videos on YouTube with one command",
@@ -102,7 +102,7 @@
    "url": "https://inematds.github.io/docflow/guia/",
    "pt": {
     "titulo": "docflow — Transforme um tema em documentário narrado para o YouTube",
-    "resumo": "Cria e publica documentários narrados no YouTube a partir de um tema, com roteiro, imagens, narração e montagem automáticos."
+    "resumo": "Cria e publica documentários narrados no YouTube a partir de um tema, com roteiro, imagens, narraçêo e montagem automáticos."
    },
    "en": {
     "titulo": "docflow — Turn a topic into a narrated documentary for YouTube",

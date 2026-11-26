@@ -7,7 +7,7 @@ Camada de abertura · Contrato de teste · Acabamento · Filme em código (sem m
 ## Motor de rolagem (canvas + quadros, nunca `<video>`)
 
 `vendor/motor-rolagem.js` já faz tudo abaixo; este texto explica por quê, para você ajustar sem trocar
-por um `<video>` (vídeo não anda quadro a quadro com a rolagem: cada busca tem latência e trava).
+por um `<video>` (vídeo nêo anda quadro a quadro com a rolagem: cada busca tem latência e trava).
 
 ```html
 <section id="filme" style="height:850vh">            <!-- ~170vh por clipe -->
@@ -36,20 +36,20 @@ fetch('frames/manifest.json').then(r => r.json()).then(m => {
 - **Carregamento em fila** (~10 por vez), começando pelo início, com o quadro mais próximo como
   reserva: nunca fica tela preta.
 - **Cobrir ou pôr tarja:** cobre enquanto o corte for ≤ 22%; acima disso (celular em pé), mostra o
-  quadro inteiro com tarja. Um 16:9 coberto num celular perde 74% da composição.
-- **Nitidez vem da fonte 1:1**, não de mais pixels de tela: extraia ~1280–1440 px e limite o DPR a 1.
+  quadro inteiro com tarja. Um 16:9 coberto num celular perde 74% da composiçêo.
+- **Nitidez vem da fonte 1:1**, nêo de mais pixels de tela: extraia ~1280–1440 px e limite o DPR a 1.
 
 ## Textos sobre o filme (batidas)
 
 ```html
 <div class="batida" data-in="0.16" data-peak="0.235" data-out="0.31"><h2>…</h2></div>
 ```
-Opacidade sobe de `in` até `peak` e desce até `out` (`data-out="2"` = não some, para o final).
+Opacidade sobe de `in` até `peak` e desce até `out` (`data-out="2"` = nêo some, para o final).
 A primeira batida aparece já no topo: `data-in="-0.1" data-peak="0"`.
 
-**O roteiro do filme é instrução de produção, não texto.** Quem não vê o filme tem que ler cada
+**O roteiro do filme é instruçêo de produçêo, nêo texto.** Quem nêo vê o filme tem que ler cada
 frase como uma promessa do assunto. Nunca diga onde a câmera está, para onde vai ou o que passa por
-ela. As batidas dizem o que a imagem não diz: a promessa, a recusa, a graça. `portao-texto.js` reprova.
+ela. As batidas dizem o que a imagem nêo diz: a promessa, a recusa, a graça. `portao-texto.js` reprova.
 
 ## Cabeçalho que se adapta
 
@@ -60,7 +60,7 @@ Um marcador de capítulo (rótulo + barra fina) serve de narrativa e de progress
 ## Emenda filme → conteúdo (sem linha)
 
 `montar.py` grava em `frames/manifest.json` a cor da faixa de baixo do último quadro (`seam`).
-Comece o fundo da seção seguinte exatamente nessa cor e acrescente um degradê no palco nos últimos
+Comece o fundo da seçêo seguinte exatamente nessa cor e acrescente um degradê no palco nos últimos
 ~8% do progresso (`(p - 0.92) / 0.08`). Filme escuro e conteúdo claro: uma "zona de pouso" alta que
 derrete do escuro para a cor da marca no primeiro bloco.
 
@@ -79,30 +79,30 @@ if (PULO !== null) history.scrollRestoration = 'manual';
 if (PULO !== null) { scrollTo(0, +PULO || 0); /* recalcula progresso, desenha, um tick */ }
 window.__ready = true;
 ```
-Esconda qualquer seguidor de cursor até o primeiro `mousemove` real (senão aparece em (0,0) nas fotos).
+Esconda qualquer seguidor de cursor até o primeiro `mousemove` real (senêo aparece em (0,0) nas fotos).
 Julgue travadas por p95 e máximo do tempo de quadro, nunca pela média de fps.
 
 ## Acabamento (o que faz parecer caro)
 
-1. **Corte a cabeça do filme.** Quase todo clipe abre num quadro que ainda não começou a andar.
-2. **Texto sobre vídeo:** branco, não creme (creme parece sujo sobre imagem clara); sombra suave.
-3. **Abaixo do filme é onde o site fica chato:** cada seção com altura mínima `min(92vh, 900px)`,
+1. **Corte a cabeça do filme.** Quase todo clipe abre num quadro que ainda nêo começou a andar.
+2. **Texto sobre vídeo:** branco, nêo creme (creme parece sujo sobre imagem clara); sombra suave.
+3. **Abaixo do filme é onde o site fica chato:** cada seçêo com altura mínima `min(92vh, 900px)`,
    um elemento muito maior que o resto, entrada com subida e fade em escada (~90 ms entre filhos).
-4. **O botão principal é o elemento mais confiante da página**, não um link de texto.
+4. **O botêo principal é o elemento mais confiante da página**, nêo um link de texto.
 5. **Logo real é baixado** (SVG oficial), nunca desenhado.
-6. **Celular é outro filme**, não um filme mais estreito (ver `2-motores.md` §8).
-7. **Foto preta não prova nada:** captura de aba escondida sai preta. Amostre o canvas
-   (`getImageData` no centro em três momentos) antes de concluir que o filme não aparece.
+6. **Celular é outro filme**, nêo um filme mais estreito (ver `2-motores.md` §8).
+7. **Foto preta nêo prova nada:** captura de aba escondida sai preta. Amostre o canvas
+   (`getImageData` no centro em três momentos) antes de concluir que o filme nêo aparece.
 
 ## Filme em código (sem motor de vídeo)
 
 O "filme" vira cenas conduzidas pela rolagem (GSAP + Lenis, via jsdelivr/cdnjs):
-- revelação de título letra a letra (`yPercent: 120 → 0`, `power4.out`);
+- revelaçêo de título letra a letra (`yPercent: 120 → 0`, `power4.out`);
 - cenas fixadas com `pin: true, scrub: true` (uma forma que cresce, uma máscara que abre);
 - corrida horizontal fixada (trilho `width:max-content` andando `-(scrollWidth - innerWidth)`);
-- revelação por `clip-path: inset(0 0 100% 0) → inset(0)`;
+- revelaçêo por `clip-path: inset(0 0 100% 0) → inset(0)`;
 - faixa que inclina com a velocidade da rolagem; contadores que rodam uma vez.
 
-**Ordem importa:** os ScrollTriggers são recalculados na ordem de criação. Crie as cenas fixadas
-primeiro e os gatilhos de fundo depois, senão as posições saem erradas (efeitos disparam cedo).
+**Ordem importa:** os ScrollTriggers sêo recalculados na ordem de criaçêo. Crie as cenas fixadas
+primeiro e os gatilhos de fundo depois, senêo as posições saem erradas (efeitos disparam cedo).
 Mesmo contrato de teste e mesma medida de travadas.

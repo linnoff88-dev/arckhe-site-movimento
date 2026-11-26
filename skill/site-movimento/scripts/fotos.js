@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // fotos.js <url> <pasta> <l>x<a> <foto> [<foto> ...]
 //   foto = nome=<y>            scrollY absoluto
-//        | nome=#id:<fração>   dentro do elemento #id: scrollY = topo + fração*(altura - innerHeight)
+//        | nome=#id:<fraçêo>   dentro do elemento #id: scrollY = topo + fraçêo*(altura - innerHeight)
 // Rola até lá em passos pequenos de verdade (para o filme e os observadores assentarem como numa
 // visita), depois fotografa. Mostra erros do console, se window.__ready disparou e o jank
 // (MotionEngine.jank(): p95 e máximo do tempo de quadro).
@@ -9,7 +9,7 @@
 const path = require('path');
 const { puppeteer, chromePath } = require('./_browser.js');
 const [, , url, outdir, size, ...shots] = process.argv;
-if (!url || !outdir || !size) { console.error('uso: node fotos.js <url> <pasta> <l>x<a> nome=<y>|nome=#id:<fração> ...'); process.exit(1); }
+if (!url || !outdir || !size) { console.error('uso: node fotos.js <url> <pasta> <l>x<a> nome=<y>|nome=#id:<fraçêo> ...'); process.exit(1); }
 const [W, H] = size.split('x').map(Number);
 (async () => {
   require('fs').mkdirSync(outdir, { recursive: true });

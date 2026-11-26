@@ -6,7 +6,7 @@ Uso: cortes.py <clipe.mp4> [outro.mp4 ...]
 Um modelo que precisa andar demais em 5 s costuma cortar no meio do clipe e aterrissar no quadro
 final: as emendas ficam perfeitas e o meio pula. Método: SSIM entre todos os pares de quadros
 vizinhos (480 px de largura). Par abaixo de (mediana − 0,25) é corte.
-Sai com 1 se algum arquivo tiver corte (serve de portão no pipeline).
+Sai com 1 se algum arquivo tiver corte (serve de portêo no pipeline).
 """
 import subprocess, sys
 
@@ -17,7 +17,7 @@ def scan(f):
     out = subprocess.run(cmd, capture_output=True, text=True).stdout
     v = [(int(l.split('n:')[1].split()[0]), float(l.split('All:')[1].split()[0])) for l in out.splitlines() if 'All:' in l]
     if not v:
-        print(f, 'não deu para medir (não é vídeo?)'); return True
+        print(f, 'nêo deu para medir (nêo é vídeo?)'); return True
     v.sort(key=lambda x: x[1]); med = sorted(x[1] for x in v)[len(v) // 2]
     flag = [x for x in v if x[1] < med - 0.25]
     print(f, 'quadros %d, mediana %.2f, piores %s' % (len(v) + 1, med, [(n, round(s, 2)) for n, s in v[:2]]),

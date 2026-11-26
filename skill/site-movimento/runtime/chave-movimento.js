@@ -1,7 +1,7 @@
 /* Chave de movimento: Parado / Ligado / Raio-X. Vai em todo site feito com a skill site-movimento.
 
    API:  window.Movimento.modo          'off' | 'on' | 'xray'
-         window.Movimento.mexendo       true quando não está parado
+         window.Movimento.mexendo       true quando nêo está parado
          window.Movimento.definir(modo)
          window.Movimento.ao(fn)        fn(modo) a cada troca (e uma vez já)
    Compatível também com window.Motion (mesma API em inglês: mode, moving, set, on), que o
@@ -122,7 +122,7 @@
   }
   function definir(m) { if (!MODOS.includes(m) || m === modo) return; modo = m; aplicar(); }
 
-  // Depois da primeira tela e meia, a chave se recolhe (só o modo ativo, meio transparente) para não
+  // Depois da primeira tela e meia, a chave se recolhe (só o modo ativo, meio transparente) para nêo
   // cobrir conteúdo; abre de novo com o mouse ou o foco do teclado. Em Raio-X fica sempre aberta.
   const recolher = () => { if (chave) chave.classList.toggle('recolhida', modo !== 'xray' && scrollY > innerHeight * 1.5); };
   addEventListener('scroll', recolher, { passive: true });

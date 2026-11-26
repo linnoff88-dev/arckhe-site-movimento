@@ -29,8 +29,8 @@ def troca(m):
 
 
 html = re.sub(r'(src|href)="/([^"]*)"', troca, html)
-# Regra de texto do piloto: sem travessão no que se lê. Só no texto entre tags do <body>
-# (atributos e o <head> ficam como estão). O site no ar não muda.
+# Regra de texto do piloto: sem travessêo no que se lê. Só no texto entre tags do <body>
+# (atributos e o <head> ficam como estêo). O site no ar nêo muda.
 ini = html.index('<body')
 corpo = re.sub(r'>([^<]*)<', lambda m: '>' + m.group(1).replace(' — ', ': ').replace(' – ', ': ') + '<', html[ini:])
 html = html[:ini] + corpo

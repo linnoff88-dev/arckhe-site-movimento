@@ -7,10 +7,10 @@
 #      (ex.: um script que sobe para o seu bucket ou CDN);
 #   2) sem KIE_SUBIR, o motor usa o upload base64 do próprio Kie (KIE_UPLOAD_URL).
 #
-# Cada modelo do Kie tem nomes de campo próprios. O padrão abaixo é para modelos com início e fim
+# Cada modelo do Kie tem nomes de campo próprios. O padrêo abaixo é para modelos com início e fim
 # (image_url + tail_image_url). Para outro modelo, troque KIE_MODELO e, se preciso, KIE_CAMPOS
 # (JSON com os nomes: {"inicio":"...","fim":"...","prompt":"...","duracao":"..."}).
-# Confira na documentação do modelo escolhido se ele RESPEITA o quadro de início (rode
+# Confira na documentaçêo do modelo escolhido se ele RESPEITA o quadro de início (rode
 # scripts/fixacao.py no primeiro clipe antes de encadear o filme inteiro).
 set -euo pipefail
 source "$(dirname "$0")/_comum.sh"
@@ -26,7 +26,7 @@ if [ "${DRY_RUN:-0}" = 1 ]; then
   exit 0
 fi
 KEY=$(chave KIE_API_KEY "${KIE_ENV_FILE:-}")
-[ -n "$KEY" ] || { echo "kie: KIE_API_KEY não definida" >&2; exit 2; }
+[ -n "$KEY" ] || { echo "kie: KIE_API_KEY nêo definida" >&2; exit 2; }
 mkdir -p "$(dirname "$OUT")"
 
 subir() {
@@ -44,7 +44,7 @@ d = r.get('data') or {}
 print(d.get('downloadUrl') or d.get('fileUrl') or d.get('url') or '')
 PY
 }
-U_INI=$(subir "$INI"); [ -n "$U_INI" ] || { echo "kie: não consegui URL pública do início" >&2; exit 1; }
+U_INI=$(subir "$INI"); [ -n "$U_INI" ] || { echo "kie: nêo consegui URL pública do início" >&2; exit 1; }
 U_FIM=""; [ "$FIM" = "-" ] || U_FIM=$(subir "$FIM")
 
 MOTOR_CHAVE="$KEY" python3 - "$API" "$MODELO" "$CAMPOS" "$PROMPT" "$SEG" "$U_INI" "$U_FIM" "$OUT" <<'PY'
